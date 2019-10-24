@@ -87,3 +87,81 @@ osoba3 = dict(
 )
 MasterList = [osoba1,osoba2,osoba3]
 print(f'Dane osób {MasterList}')
+
+# cw1 Stwórz funkcję, która jako parametry przyjmuje dwie listy a_list oraz b_list. Następnie zwróć listę, która będzie posiadać parzyste indeksy z listy a_list oraz nieparzyste z b_list.
+a_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+b_list = [123, 123, 23435, 2123]
+
+
+def funkcja(a_list, b_list):
+    for i in a_list:
+        if (i % 2) == 0:
+            print(i)
+    for i in b_list:
+        if (i % 2) != 0:
+            print(i)
+
+
+print(funkcja(a_list, b_list))
+
+
+# cw2Stwórz funkcję, która przyjmuje parametr data_text, a następnie zwróci następujące informacje o parametrze w formie słownika (dict):
+def funkcja2(wartosci):
+    wartosci = dict(
+        długość=len(wartosci),
+        litery=[char for char in wartosci]
+    )
+    print(wartosci.values())
+
+
+data_text = "dddddddddd"
+print(funkcja2(data_text))
+
+
+# cw3
+def funkcja3(text, letter):
+    for litera in text:
+        if (litera != letter):
+            print(litera)
+
+
+text = 'ddeeeebil'
+print(funkcja3(text, chr(101)))
+
+
+# cw 4 Funkcja temperatury
+def funkcja4(temperatura):
+    Kelvin = temperatura + 273.15
+    Fahrenheit = (temperatura * 1.8) + 32
+    Rankie = Kelvin * 1.8
+    print(Kelvin)
+    print(Fahrenheit)
+    print(Rankie)
+
+
+temperature_type = 10
+print(funkcja4(temperature_type))
+
+
+# cw5
+class kalkulator():
+    def __init__(self,a,b):
+        self.a=a
+        self.b=b
+    def add(self):
+        return self.a+self.b
+    def mul(self):
+        return self.a*self.b
+    def div(self):
+        return self.a/self.b
+    def sub(self):
+        return self.a-self.b
+calc = kalkulator(1,6)
+print(calc.add())
+#cw6
+class ScienceCalculator : kalkulator
+
+
+def __init__(self, a, b):
+    self.a = a
+    self.b = b
