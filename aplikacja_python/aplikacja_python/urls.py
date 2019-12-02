@@ -18,8 +18,7 @@ from django.urls import path
 
 from django.urls import include, path
 from rest_framework import routers
-from aplikacja_python.shop import views
-
+from shop import views
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
