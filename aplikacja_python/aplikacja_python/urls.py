@@ -21,5 +21,6 @@ urlpatterns = [
     path('', include('shop.urls')),
     path('login/', include('rest_framework.urls')),
     path('', include('shop.Account.urls')),
+    path(r'^api-auth/', include('rest_framework.urls'))
 
 ]

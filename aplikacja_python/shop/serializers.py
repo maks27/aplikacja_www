@@ -4,9 +4,11 @@ from shop.models import Users, Products, Orders, Order_products, Categories
 
 
 class UserSerializer(serializers.ModelSerializer):
+    owner = serializers.ReadOnlyField(source='owner.username')
+
     class Meta:
         model = Users
-        fields = ['id', 'url', 'shipment_adres']
+        fields = ['id', 'url', 'user_account', 'owner', 'shipment_adres']
 
 
 class CategoriesSerializer(serializers.ModelSerializer):
