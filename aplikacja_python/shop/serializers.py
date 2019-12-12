@@ -6,7 +6,7 @@ from shop.models import Users, Products, Orders, Order_products, Categories
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = Users
-        fields = ['id', 'url', 'name', 'email', 'last_name']
+        fields = ['id', 'url', 'shipment_adres']
 
 
 class CategoriesSerializer(serializers.ModelSerializer):

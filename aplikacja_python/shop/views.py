@@ -1,16 +1,16 @@
-from django.http import HttpResponse, JsonResponse
-from django.views.decorators.csrf import csrf_exempt
-from rest_framework.parsers import JSONParser
+from django.db.models import Sum
+
 from shop.models import Users, Products, Orders, Order_products, Categories
 from shop.serializers import UserSerializer, ProductSerializer, Order_ProductsSerializer, CategoriesSerializer, \
     OrdersSerializer
-from rest_framework import viewsets
+from rest_framework import viewsets, permissions
 from django.shortcuts import render
 
 
 class ProductsView(viewsets.ModelViewSet):
     queryset = Products.objects.all()
     serializer_class = ProductSerializer
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
 
 
 class UsersView(viewsets.ModelViewSet):
